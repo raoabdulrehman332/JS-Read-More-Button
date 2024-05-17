@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read More Btn</title>
+    <style>
+        body{
+            margin: 0%;
+            align-items: center;
+            background-color: black;
+            display: block;
+            justify-content: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        h1{
+            color: aliceblue;
+            text-align: center;
+            font-weight: bolder;
+            font-size: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+       
+        .main{
+            width: 40%;
+            height: 400px auto;
+            background-color: aliceblue;
+            border: none;
+            margin: auto;
+            margin-top: 50px;
+            outline: none;
+            border-radius: 40px;
+            text-align: justify;
+            padding: 30px;
+        }
+        #btn{
+            padding: 10px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            background-color: rgb(138, 204, 182);
+            font-size: 16px;
+            color: rgb(3, 3, 3);
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 700;
+        }
+        #btn:hover {
+        background-color: #59ffec;
+        color: rgb(55, 12, 245);
+        }
+    </style>
+</head>
+<body>
+    <h1>JS Assignment <br> Read More button </h1>
+   
+      
+        <div class="main">
+
+            <p id="text"></p>
+            <button id="btn">See More</button>
+    
+        
+
+
+    </div>
+    
+
+
+    <script>
+         var btn = document.getElementById('btn');
+    var text = document.getElementById('text')
+    var flag = 1
+   
+    var msg = ' JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well. JavaScript supports object-oriented programming with object prototypes and classes.   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab harum ad totam debitis iure soluta expedita odit, quas nobis nostrum minima earum doloribus, tenetur voluptas, inventore cum sapiente laudantium beatae!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, accusantium sed. Esse natus et consequuntur fuga, illum rem laudantium unde saepe nulla totam optio suscipit provident omnis, magni minima laboriosam! ';
+    text.innerHTML = msg.slice(0,60)+"..."
+ 
+    function more(){
+       if(flag == 1){
+    text.innerHTML = msg.slice(0)
+    btn.innerHTML = "See Less"
+    flag = 0
+    }else{
+        text.innerHTML = msg.slice(0,60)+"..."
+        btn.innerHTML = "See More"
+        flag = 1
+    }
+}
+    btn.addEventListener('click',more)
+    </script>
+</body>
+</html>
